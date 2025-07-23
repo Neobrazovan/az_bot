@@ -2,6 +2,11 @@ services:
   - type: web
     name: aziz-bot
     env: python
-    buildCommand: ""
-    startCommand: python aziz_bot.py
     plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python aziz_bot.py
+    envVars:
+      - key: API_TOKEN
+        value: "твой_токен"
+      - key: ADMIN_ID
+        value: "123456789"  # id твоего Telegram
