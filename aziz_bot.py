@@ -4,9 +4,10 @@ from aiogram.dispatcher import FSMContext
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher.filters.state import State, StatesGroup
 
-# 🔒 Укажи свой токен и Telegram ID
-API_TOKEN = '7985603336:AAHMGuEskuBYRWBC3KT1YAFdnPTRWLy5ifA'
-ADMIN_ID =  6325248562
+import os
+
+API_TOKEN = os.getenv("API_TOKEN")
+ADMIN_ID = int(os.getenv("ADMIN_ID"))
 
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot, storage=MemoryStorage())
